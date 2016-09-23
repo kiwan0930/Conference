@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="conference" />
+
+	<beans:bean id="quartzTask" class="conference.common.quartz.QuartzTask" />
+
+	<beans:bean name="quartzJob"
+		class="org.springframework.scheduling.quartz.JobDetailBean"
+		p:jobClass="conference.common.quartz.QuartzTaskBean">
+		<beans:property name="jobDataAsMap">
+			<beans:map>
+				<beans:entry key="quartzTask" value-ref="quartzTask" />
+			</beans:map>
+		</beans:property>
+	</beans:bean>
+
+	<!-- <beans:bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean" -->
+	<beans:bean id="cronTrigger" class="conference.common.quartz.QuartzCronTrigger"
+		p:jobDetail-ref="quartzJob" p:startDelay="0" p:cronExpression="0/20 * * * * ?" />
+
+
+	<beans:bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+
+		<beans:property name="triggers">
+			<beans:list>
+				<beans:ref bean="cronTrigger" />
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+
+</beans:beans>

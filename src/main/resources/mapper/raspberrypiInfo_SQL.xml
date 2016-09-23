@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="raspberrypiInfo">
+	
+	<select id="selConferenceList" resultType="hashmap">
+		Select A.raspberrypimac, A.ipaddress,  A.name, B.status, B.starttime, B.endtime, B.updatetime 
+		from RaspberryPiInfo As A, RaspberryPiStatus As B 
+		Where A.raspberrypimac = B.raspberrypimac
+		order by NULLIF(regexp_replace(name, E'\\D', '', 'g'), '')::int;
+	</select>
+
+	<insert id="insRaspberrypiInfo" parameterType="hashmap" >
+		insert into raspberrypiinfo(raspberrypimac,name,hostname,ipaddress) 
+		values(#{confmacaddr},#{confname},#{confhostname}, #{confipaddress}  );
+		
+		insert into raspberrypistatus(raspberrypimac,status) 
+		values(#{confmacaddr},false);
+	</insert>
+	
+	
+	<select id="selRaspberrypiInfoList" resultType="hashmap">
+		SELECT * FROM raspberrypiinfo 
+	</select>
+	
+</mapper>
+

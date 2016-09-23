@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="beaconInfo">	
+
+	<select id="selBeaconInfoList" resultType="hashmap">
+		SELECT * FROM beaconinfo;
+	</select>
+
+	<select id="insBeaconInfo" parameterType="hashmap">
+		insert into beaconinfo (beaconmac,name,uuid,major,minor) 
+		values(#{macaddr},#{name},#{uuid}, #{major} ,#{minor} );
+	</select>
+
+
+	
+</mapper>
+

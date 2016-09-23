@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="keyMatch">	
+
+	<insert id="insKeyManage" parameterType="hashmap" >
+		insert into keymanage(beaconmac,raspberrypimac) 
+		values(#{beaconmac},#{raspberrypimac} );
+	</insert>
+
+	<insert id="insKeyMatch" parameterType="hashmap" >
+		insert into keymatch(beaconmac,raspberrypimac) 
+		values(#{beaconmac},#{raspberrypimac} );
+	</insert>
+	
+	
+</mapper>
+

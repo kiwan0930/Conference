@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+
+<script src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" type="text/css" href="<c:url value='/css/jquery.dataTables.css'/> " />
+<script type="text/javascript"src="<c:url value='/js/jquery.dataTables.min.js'/> "></script>
+
+
+
+<link rel="stylesheet" type="text/css" href="<c:url value='/css/ui.css'/>" />
+
+
+<!--  qtip -->
+<link rel="stylesheet" type="text/css" href="<c:url value='/css/tooltipster.bundle.min.css'/> " />
+<script type="text/javascript" src="<c:url value='/js/tooltipster.bundle.min.js'/> "></script>
+
+
+
+<!-- eosmeu -->
+<link rel="stylesheet" type="text/css" href="<c:url value='/css/eosMenu.css'/> " />
+<script type="text/javascript" src="<c:url value='/js/eosMenu.js'/> "></script>

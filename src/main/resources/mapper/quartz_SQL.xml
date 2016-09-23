@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="quartz">	
+
+	<select id="selList" resultType="hashmap">
+		Select Distinct ON(RaspberryPiMac, BeaconMac) *
+		From(Select A.raspberrypimac As RaspberryPiMac, B.beaconmac As BeaconMac, C.rssi As RSSI, C.detectivetime As DetectiveTime
+		From RaspberryPiInfo As A, KeyMatch As B, DetectiveLog As C
+		Where A.raspberrypimac = B.raspberrypimac And A.raspberrypimac = C.raspberrypimac And B.beaconmac = C.beaconmac
+		Order By RaspberryPiMac, RSSI DESC) As DetectiveLog_Result
+	</select>
+	
+	<update id="setStart" parameterType="hashmap">
+		Update RaspberryPiStatus 
+		Set status = True, starttime = #{detectivetime}, endtime = null
+		Where raspberrypimac = #{raspberrypimac}
+	</update>
+	
+	<update id="setEnd" parameterType="hashmap">
+		Update RaspberryPiStatus 
+		Set status = False, endtime = #{detectivetime}
+		Where raspberrypimac = #{raspberrypimac}
+	</update>
+	
+	<update id="setUpdate" parameterType="hashmap">
+		Update RaspberryPiStatus 
+		Set updatetime = now()
+	</update>
+
+	
+	<select id="selStatus" resultType="hashmap" parameterType="hashmap">
+		select * from raspberrypistatus where raspberrypimac = #{raspberrypimac};
+	</select>
+	
+	<select id="selUTDTime" resultType="hashmap" parameterType="hashmap">
+		select max(detectivetime) from detectivelog  where raspberrypimac = #{raspberrypimac};
+	</select>
+	
+	
+	
+
+</mapper>
+

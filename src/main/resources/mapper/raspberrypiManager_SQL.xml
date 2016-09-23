@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="raspberrypiManager">	
+		
+		
+	<select id="selManageList" resultType="hashmap">
+		Select KeyManageList.ManagerName, KeyManageList.RaspberryPiMac, KeyManageList.BeaconMac, KeyManageList.BeaconName, DetectiveLog_SortResult.RSSI, DetectiveLog_SortResult.DetectiveTime
+		From (Select A.name As ManagerName, A.raspberrypimac As RaspberryPiMac, B.beaconmac As BeaconMac, C.name As BeaconName
+		From RaspberryPiManager As A, KeyManage As B, BeaconInfo As C
+		Where A.raspberrypimac = B.raspberrypimac And B.beaconmac = C.beaconmac) As KeyManageList
+		Left Outer Join (Select Distinct ON(RaspberryPiMac, BeaconMac) *
+		From(Select A.raspberrypimac As RaspberryPiMac, B.beaconmac As BeaconMac, C.rssi As RSSI, C.detectivetime As DetectiveTime
+		From RaspberryPiManager As A, KeyManage As B, DetectiveLog As C
+		Where A.raspberrypimac = B.raspberrypimac And A.raspberrypimac = C.raspberrypimac And B.beaconmac = C.beaconmac
+		Order By RaspberryPiMac, RSSI DESC) As DetectiveLog_Result) As DetectiveLog_SortResult
+		On KeyManageList.RaspberryPiMac = DetectiveLog_SortResult.RaspberryPiMac And KeyManageList.BeaconMac = DetectiveLog_SortResult.BeaconMac
+	</select>
+	
+	
+	<insert id="insRaspberrypimanager" parameterType="hashmap" >
+		insert into raspberrypimanager(raspberrypimac,name,hostname,ipaddress) 
+		values(#{managemacaddr},#{managename},#{managehostname}, #{manageipaddress}  );
+		
+	</insert>
+	
+	
+	<select id="selRaspberrypimanagerList" resultType="hashmap">
+		SELECT * FROM raspberrypimanager
+	</select>
+	
+	
+</mapper>
+
