@@ -20,7 +20,7 @@ import conference.service.RaspberrypiInfoService;
 import conference.service.RaspberrypiManagerService;
 
 @Controller
-public class TelnetCommand {
+public class TelnetCommand { 
 
     @Resource(name="raspberrypiInfoService")
     private RaspberrypiInfoService serviceI;
