@@ -22,6 +22,10 @@ $(document).ready(function() {
 	$('#reload').click(function(){
 		window.location = "<c:url value='/confList'/>";
 	});
+	$('#reload2').click(function(){
+		window.location = "<c:url value='/guest'/>";
+	});
+	
 	$('#confadd').click(function(){
 		var w = 700;		
 		var h = 380;
@@ -180,6 +184,7 @@ $(document).ready(function() {
 				<c:if test="${leftNaviVal == -1}">
 					<div class="eos-menu" id="menu">
 						<div class="eos-menu-content">
+							<div class="eos-group-title" id="reload2">リロード</div>
 							<div class="eos-group-title" onclick="javascript:formSubmit()">LOGOUT</div>
 						</div>
 					</div>

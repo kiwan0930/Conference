@@ -1,2 +1,2 @@
 insert into USER_AUTH values('guest','ROLE_USER');
-insert into USER_AUTH values('kiwan','ROLE_ADMIN');
+insert into USER_AUTH values('admin','ROLE_ADMIN');

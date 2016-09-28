@@ -85,7 +85,7 @@
 						<th scope="row">受信機Macアドレス</th>
 						<td><input type="text" id="confmacaddr" name="confmacaddr" style="width: 100%;"></td>
 					</tr>
-					
+					 
 					<tr>
 						<th scope="row">受信機ホスト名</th>
 						<td><input type="text" id="confhostname" name="confhostname" style="width: 100%;"></td>
@@ -97,7 +97,7 @@
 						<td><input type="text" id="confipaddress" name="confipaddress" style="width: 100%;"></td>
 					</tr>
 					
-				</tbody>
+				</tbody> 
 			</table>
 			
 			<br>

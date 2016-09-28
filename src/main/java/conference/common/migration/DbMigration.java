@@ -26,10 +26,8 @@ public class DbMigration {
 	public Flyway getFlyway() {
 		return flyway;
 	}
+	
 	public void setFlyway(Flyway flyway) {
 		this.flyway = flyway;
 	}
-    
-    
-    
 }
