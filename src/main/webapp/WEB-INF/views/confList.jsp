@@ -11,7 +11,7 @@
 					function() {
 						var table = $('#confTable')
 								.DataTable(
-										{
+										{ 
 											"language" : {
 												"emptyTable" : "データが登録されていません。",
 												"info" : "_TOTAL_ 件中 _START_ 件から _END_ 件までを表示",
