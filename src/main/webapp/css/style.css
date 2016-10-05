@@ -1,6 +1,6 @@
 body {
 	/* #ffea92 */
-  background: #333333;
+  background: #eeeeee;
   margin: 0;
   font-family: "Hiragino Sans","ƒqƒ‰ƒMƒmŠpƒSƒVƒbƒN";
   color: #000;
@@ -26,7 +26,7 @@ main {
 /* #5bc995 */
 .menu {
 	font-family: "Hiragino Sans","ƒqƒ‰ƒMƒmŠpƒSƒVƒbƒN";
-  background: #2F4050;
+  background: #ddd;
   height: 100vh;
   width: 240px;
   position: absolute;
@@ -34,7 +34,6 @@ main {
   left: 0px;
   z-index: 5;
   outline: none;
-   color: #fff;
 }
 .menu .avatar {
 	font-family: "Hiragino Sans","ƒqƒ‰ƒMƒmŠpƒSƒVƒbƒN";

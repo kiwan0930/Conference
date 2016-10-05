@@ -11,15 +11,15 @@
 		"eosMenu": function(options) {
 			var defaluts = {
 				fontSize: '14px', //字体大小
-				color: '#eee', //字体颜色
-				hoverColor: '#eee', //鼠标悬停,字体颜色
-				background: '#2F4050', //背景颜色
-				subBackground: '#263442', //子级背景颜色
-				hoverBackground: '#293744', //鼠标悬停,背景颜色
+//				color: '#eee', //字体颜色
+//				hoverColor: '#eee', //鼠标悬停,字体颜色
+//				background: '#2F4050', //背景颜色
+//				subBackground: '#263442', //子级背景颜色
+//				hoverBackground: '#293744', //鼠标悬停,背景颜色
 				height: '40px', //每行总高度
 				lineHeight: '40px', //每行行高
-				borderColor: '#293744', //边线颜色
-				hoverborderColor: '#293744', //鼠标悬停,边线颜色
+//				borderColor: '#293744', //边线颜色
+//				hoverborderColor: '#293744', //鼠标悬停,边线颜色
 				zIndex: 10, //菜单主体层级
 				onItemClick: null, //点击菜单项时执行函数
 				onMenuTitleClick: null, //点击目录标题时执行函数

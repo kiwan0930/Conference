@@ -11,7 +11,6 @@
 
 .eos-menu {
 	font-size: 14px;
-	color: #eee;
 	font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
@@ -48,8 +47,9 @@
 .eos-menu .eos-item {
 	height: 40px;
 	line-height: 40px;
-	background: #2F4050;
-	border-color: #293744;
+	background: #dddddd;					/* color*/
+	/* border-color: #293744; */
+	color: #000000;
 	padding-left: 15px !important;
 	padding-right: 15px !important;
 	border-bottom: 1px solid transparent;
@@ -65,16 +65,21 @@
 .eos-menu .eos-group-title:hover,
 .eos-menu .eos-item:hover {
 	cursor: pointer;
-	background: #293744;
+	background: #888888;
 }
 
+
 .eos-menu .eos-group-content .eos-item {
-	background: #263442;
+	background: #eeeeee;
 	padding-left: 30px !important;
+	color: #000000;
+}
+.eos-menu .eos-group-content .eos-item:hover {
+	cursor: pointer;
+	background: #bbbbbb;
 }
 
 .eos-menu .eos-item a {
-	color: #eee;
 	display: block;
 	text-decoration: none;
 }
@@ -92,7 +97,5 @@
 		position: inherit;
 	}
 }
-
-/*  **********************************************************************************************S*/
 
 

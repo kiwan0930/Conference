@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ include file="/WEB-INF/include/include-header.jspf"%>
 <%@ include file="/WEB-INF/include/logout.jspf"%>
-<!-- <meta http-equiv="refresh" content ="5"> -->
 
 
 <script>
@@ -15,16 +13,32 @@
 								.DataTable(
 										{
 											"language" : {
-												"url" : "//cdn.datatables.net/plug-ins/3cfcc339e89/i18n/Japanese.json"
+												"emptyTable" : "データが登録されていません。",
+												"info" : "_TOTAL_ 件中 _START_ 件から _END_ 件までを表示",
+												 "infoEmpty" : "",
+												  "infoFiltered" : "(_MAX_ 件からの絞り込み表示)",
+												  "infoPostFix" : "",
+												  "thousands" : ",",
+												  "lengthMenu" : "1ページあたりの表示件数: _MENU_",
+												  "loadingRecords" : "ロード中",
+												  "processing" : "処理中...",
+												  "search" : "検索",
+												  "zeroRecords" : "該当するデータが見つかりませんでした。",
+												  "paginate" : {
+												    "first" : "先頭",
+												    "previous" : "前へ",
+												    "next" : "次へ",
+												    "last" : "末尾"
+												  }
 											},
 											"autoWidth" : false,
 											"paging" : false,
 
-											"columnDefs" : [ {
+ 											"columnDefs" : [ {
 												"targets" : [ 0 ],
 												"visible" : false
 											} ],
-
+ 
 											"orderClasses" : false,
 											"deferRender" : true,
 											"Processing" : true
@@ -54,7 +68,6 @@
 											"orderClasses" : false,
 											"deferRender" : true,
 											"Processing" : true
-
 										});
 
 						$('#shutdown')
@@ -109,7 +122,7 @@
 	<main>
 
 	<div style="text-align: center">
-		<font size="7" color="white"><b>会議室利用状況</b></font>
+		<font size="7"><b>会議室利用状況</b></font>
 	</div>
 
 	<br>
@@ -153,11 +166,11 @@
 	<br>
 
 	<div style="text-align: center">
-		<font size="7" color="white"><b>鍵貸出状況</b></font>
+		<font size="7"><b>鍵貸出状況</b></font>
 	</div>
 	<br>
 
-	<table id="keyTable" class="cell-border">
+	<table id="keyTable" class="display">
 		<thead>
 			<tr>
 				<th>ビーコン鍵</th>
@@ -186,7 +199,7 @@
 	</table>
 	<br>
 	
-	<div align="right" style="color: white; font-family: Hiragino Sans, ヒラギノ角ゴシック;">
+	<div align="right" style=" font-family: Hiragino Sans, ヒラギノ角ゴシック;">
 		update Time : <fmt:formatDate value="${confList[0].updatetime}" pattern="yyyy/MM/dd  HH:mm " />
 	</div>
 	

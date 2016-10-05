@@ -2,19 +2,30 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
-
-<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
-<script src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script> 
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css " />
+<%@ include file="/WEB-INF/include/include-header.jspf"%>	
 <link rel="stylesheet" type="text/css" href="<c:url value='/css/ui.css'/>" />
 
 <script>
 $(document).ready(function(){	
 	 var table = $('#myTable').DataTable({
 		  "language": {
-		  	 "url": "//cdn.datatables.net/plug-ins/3cfcc339e89/i18n/Japanese.json"
+			  "emptyTable" : "データが登録されていません。",
+				"info" : "_TOTAL_ 件中 _START_ 件から _END_ 件までを表示",
+				 "infoEmpty" : "",
+				  "infoFiltered" : "(_MAX_ 件からの絞り込み表示)",
+				  "infoPostFix" : "",
+				  "thousands" : ",",
+				  "lengthMenu" : "1ページあたりの表示件数: _MENU_",
+				  "loadingRecords" : "ロード中",
+				  "processing" : "処理中...",
+				  "search" : "検索",
+				  "zeroRecords" : "該当するデータが見つかりませんでした。",
+				  "paginate" : {
+				    "first" : "先頭",
+				    "previous" : "前へ",
+				    "next" : "次へ",
+				    "last" : "末尾"
+				  }
 		  },
 		  "searching" :   false,
 		  "paging": false,
@@ -76,7 +87,7 @@ $(document).ready(function(){
 	<input type="hidden" id="ipaddress" value="${ipaddress}">
 	
 
-	<font size="5" style="float: left; color: white; ">Room Name : ${confName}から発見されたビーコンリスト </font>
+	<font size="5" style="float: left; ">Room Name : ${confName}から発見されたビーコンリスト </font>
 
 	
 	<table id="myTable" class="stripe" >

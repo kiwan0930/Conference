@@ -11,7 +11,23 @@
 $(document).ready(function() {
 	var table = $('#confTable').DataTable({
 		"language" : {
-			"url" : "//cdn.datatables.net/plug-ins/3cfcc339e89/i18n/Japanese.json"
+			"emptyTable" : "データが登録されていません。",
+			"info" : "_TOTAL_ 件中 _START_ 件から _END_ 件までを表示",
+			 "infoEmpty" : "",
+			  "infoFiltered" : "(_MAX_ 件からの絞り込み表示)",
+			  "infoPostFix" : "",
+			  "thousands" : ",",
+			  "lengthMenu" : "1ページあたりの表示件数: _MENU_",
+			  "loadingRecords" : "ロード中",
+			  "processing" : "処理中...",
+			  "search" : "検索",
+			  "zeroRecords" : "該当するデータが見つかりませんでした。",
+			  "paginate" : {
+			    "first" : "先頭",
+			    "previous" : "前へ",
+			    "next" : "次へ",
+			    "last" : "末尾"
+			  }
 		},
 		"autoWidth": false,
 		"paging" : false,
@@ -52,7 +68,7 @@ $(document).ready(function() {
 	<%@ include file="/WEB-INF/views/leftNavi.jsp" %>
 
 	<main>
-	<div style="color:white; font-family: Hiragino Sans,ヒラギノ角ゴシック; font-weight: 900;">
+	<div style=" font-family: Hiragino Sans,ヒラギノ角ゴシック; font-weight: 900;">
 		<div class="fontF" style="text-align: center"> <font size="7"><b>会議室利用状況</b></font> </div>
 		
 		<br>
@@ -106,7 +122,7 @@ $(document).ready(function() {
 		</div>
 		<br>
 
-		<table id="keyTable" class="cell-border">
+		<table id="keyTable" class="display">
 			<thead>
 				<tr>
 					<th>ビーコン鍵</th>

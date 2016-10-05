@@ -21,12 +21,12 @@
 }
 
 #login-box {
-	width: 300px;
+	width: 320px;
 	padding: 20px;
 	margin: 100px auto;
-	background: #fff;
+	background: #eeeeee;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 
-	background-color: #333333;
+	background-color: #eeeeee;
 }

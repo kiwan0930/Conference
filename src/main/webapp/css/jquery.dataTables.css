@@ -2,25 +2,20 @@
  * Table styles
  */
  .dataTables_length {
-  color: white !important;
   font-family: "Hiragino Sans","ƒqƒ‰ƒMƒmŠpƒSƒVƒbƒN";
  }
 
 .dataTables_filter {
-	 color: white !important;
 	 font-family: "Hiragino Sans","ƒqƒ‰ƒMƒmŠpƒSƒVƒbƒN";
  }
 
 .dataTables_info {
-	 color: white !important;
 	 font-family: "Hiragino Sans","ƒqƒ‰ƒMƒmŠpƒSƒVƒbƒN";
  }
 .dataTables_paginate {
-	 color: white !important;
 	 font-family: "Hiragino Sans","ƒqƒ‰ƒMƒmŠpƒSƒVƒbƒN";
  }
-
- 
+	 
 table.dataTable {
   width: 100%;
   margin: 0 auto;
@@ -42,7 +37,7 @@ table.dataTable thead th,
 table.dataTable tfoot th {
 	font-family: "Hiragino Sans","ƒqƒ‰ƒMƒmŠpƒSƒVƒbƒN";
   font-weight: bold;
-  color: white;
+  /* color: white; */
 }
 table.dataTable thead th,
 table.dataTable thead td {
