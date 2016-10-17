@@ -16,7 +16,7 @@ public class EtcService {
 	@Resource(name = "etcDAO")
 	private EtcDAO etcDAO;
 	
-	public List<HashMap<String,Object>>  selLogList() {
+	public List<HashMap<String,Object>> selLogList() {
 		return etcDAO.selLogList();
 	}
 	

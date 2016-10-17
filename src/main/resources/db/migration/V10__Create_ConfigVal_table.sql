@@ -1,7 +1,6 @@
 
 create table configval
 (
-	uuid varchar,
 	confrssi integer,
 	managerssi integer,
 	rasp_id varchar,

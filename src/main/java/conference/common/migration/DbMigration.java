@@ -18,6 +18,7 @@ public class DbMigration {
     @PostConstruct
     public void run() {
         log.info("[Start] DbMigration run .. ");
+//        flyway.clean();
         flyway.migrate();
         log.info("[End] DbMigration run .. ");
     }

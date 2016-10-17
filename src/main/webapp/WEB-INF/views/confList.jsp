@@ -6,16 +6,14 @@
 
 
 <script>
-	$(document)
-			.ready(
-					function() {
+	$(document).ready(function() {
 						var table = $('#confTable')
 								.DataTable(
 										{ 
 											"language" : {
 												"emptyTable" : "データが登録されていません。",
 												"info" : "_TOTAL_ 件中 _START_ 件から _END_ 件までを表示",
-												 "infoEmpty" : "",
+												 "infoE mpty" : "",
 												  "infoFiltered" : "(_MAX_ 件からの絞り込み表示)",
 												  "infoPostFix" : "",
 												  "thousands" : ",",
@@ -204,9 +202,6 @@
 	</div>
 	
 	</main>
-
-
-
 
 </body>
 </html>

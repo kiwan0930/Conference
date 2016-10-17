@@ -5,7 +5,8 @@
 
 
 	<select resultType="hashmap" id="selConfBeaconList" parameterType="hashmap"> 
-		select d.* from detectivelog d where d.raspberrypimac = #{macaddr};
+		select d.* from detectivelog d where d.raspberrypimac = #{macaddr} 
+		and ( d.uuid = '481ceb282bdd42d39c7cd94e39c59d64' or d.uuid ='e7d61ea3f8dd49c88f2ff2484c07acb9');
 	</select>
 
 	<delete id="delDetectiveLog">

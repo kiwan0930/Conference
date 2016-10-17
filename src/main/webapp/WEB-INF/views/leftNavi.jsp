@@ -1,9 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ include file="/WEB-INF/include/include-header.jspf"%>
 <%@ include file="/WEB-INF/include/logout.jspf"%>
 
@@ -105,21 +103,13 @@ $(document).ready(function() {
 <nav class="menu" tabindex="0">
 
 	<header class="avatar">
-		<sec:authorize access="hasRole('ROLE_ADMIN')">
-			<img src="<c:url value='/img/admin.png' />" />
-			<h2>${pageContext.request.userPrincipal.name}</h2>
-		</sec:authorize>
-
-		<sec:authorize access="hasRole('ROLE_USER')">
-			<img src="<c:url value='/img/guest.jpg' />" />
-			<h2>${pageContext.request.userPrincipal.name}</h2>
-		</sec:authorize>
+			<img src="<c:url value='/img/logo.gif' />" />
 	</header>
 
 
 	<div id="container1" style="overflow: hidden;">
 		<div id="container2"
-			style="overflow: auto; position: absolute; top: 274px; left: 0px; right: 0px; bottom: 0px;">
+			style="overflow: auto; position: absolute; top: 110px; left: 0px; right: 0px; bottom: 0px;">
 			<ul>
 				<c:if test="${leftNaviVal == 0}">
 					<div class="eos-menu" id="menu">
@@ -190,8 +180,6 @@ $(document).ready(function() {
 					</div>
 
 				</c:if>
-
-
 
 			</ul>
 

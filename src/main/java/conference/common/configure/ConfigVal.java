@@ -8,7 +8,7 @@ public class ConfigVal {
 	public static int MANAGE_RSSI = -80;
 	public static int NO_DETECTED_MIN = 10;
 	public static String LoopInterval;
-	public static String UUID;
+	public static final String[] UUID ={"481ceb282bdd42d39c7cd94e39c59d64","e7d61ea3f8dd49c88f2ff2484c07acb9"};
 	
 	
 }

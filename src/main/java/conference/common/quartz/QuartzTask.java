@@ -78,7 +78,6 @@ public class QuartzTask {
 		sysTime =  new Timestamp(date.getTime());
 		 
 		// init Config
-		ConfigVal.UUID = configVal.get(0).get("uuid").toString();
 		ConfigVal.CONF_RSSI= (Integer)configVal.get(0).get("confrssi");
 		ConfigVal.MANAGE_RSSI= (Integer)configVal.get(0).get("managerssi");
 		ConfigVal.rasp_ID= configVal.get(0).get("rasp_id").toString();	

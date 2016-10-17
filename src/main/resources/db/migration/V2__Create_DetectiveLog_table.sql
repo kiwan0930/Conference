@@ -1,5 +1,4 @@
 Create Table DetectiveLog(
-	id Integer,
 	raspberrypimac Varchar ,
 	hostname Varchar ,
 	beaconmac Varchar ,
@@ -9,5 +8,5 @@ Create Table DetectiveLog(
 	minor Integer ,
 	crssi Integer ,
 	rssi Integer ,
-	detectivetime Timestamp 
+	detectivetime Timestamp default now()
 );

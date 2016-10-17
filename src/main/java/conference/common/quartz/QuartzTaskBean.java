@@ -12,7 +12,6 @@ public class QuartzTaskBean extends QuartzJobBean {
 	 
     private QuartzTask quartzTask;
 
-    
     protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
     
     	try {
